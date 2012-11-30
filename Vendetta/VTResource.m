@@ -7,9 +7,11 @@
 //
 
 #import "VTResource.h"
-#import "XPathQuery.h"
+#import "VTResourceParser.h"
 
-@implementation VTResource
+@implementation VTResource{
+    __strong NSArray * _allURLs;
+}
 
 #pragma mark -
 #pragma mark Public API
@@ -25,15 +27,13 @@
     return resource;
 }
 
--(NSArray *)allURL{
-    NSString * xPathQuery= @"//*[@src]/@src | //*[@href]/@href";
-    NSArray * nodes= PerformHTMLXPathQuery(self.data, xPathQuery);
-    NSMutableArray * array=[NSMutableArray array];
-    [nodes enumerateObjectsUsingBlock:^(NSDictionary * obj, NSUInteger idx, BOOL *stop) {
-        NSURL * url=[NSURL URLWithString:[obj objectForKey:@"nodeContent"]];
-        [array addObject:url];
-    }];
-    return array;
+-(NSArray *)allURLs{
+    if(!_allURLs){
+         _allURLs=[[VTResourceParser new] URLsFromData:self.data];
+        
+    }
+
+    return _allURLs;
 }
 
 #pragma mark -

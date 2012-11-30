@@ -19,11 +19,12 @@ typedef enum VTLoaderStatus{
 
 @interface VTLoader : NSObject
 
-@property(nonatomic, assign) VTLoaderStatus status;
-@property(atomic, strong) NSURL * url;
-@property(nonatomic, strong) NSOperationQueue * operationQueue;
 @property(nonatomic, copy) VTLoaderOnLoadURLHandler onLoadHandler;
-+(VTLoader *)loaderWithURL:(NSURL *)url;
+@property(atomic,  strong) NSURLRequest * request;
+@property(nonatomic, assign) VTLoaderStatus status;
+@property(nonatomic, strong) NSOperationQueue * operationQueue;
+
++(VTLoader *)loaderWithRequest:(NSURLRequest *)request;
 -(void)loadURLContentsWithHandler:(VTLoaderOnLoadURLHandler)handler;
 
 @end

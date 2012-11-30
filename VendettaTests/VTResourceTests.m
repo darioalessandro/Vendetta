@@ -11,11 +11,17 @@
 
 @implementation VTResourceTests
 
--(void)testShouldGetNilInstanceAndErrorWithNilData{
+-(void)testShouldGetNilInstanceWithNilData{
     NSError * error;
     VTResource * resource=[VTResource resourceWithData:nil error:&error];
     STAssertEqualObjects(nil, resource, @"Should be nil but it's not %@", resource);
+}
+
+-(void)testShouldGetErrorWithNilData{
+    NSError * error;
+    VTResource * resource=[VTResource resourceWithData:nil error:&error];
     STAssertTrue(error!=nil, @"should get an error but got a nil pointer");
+    NSLog(@"resurce %@", resource);
 }
 
 

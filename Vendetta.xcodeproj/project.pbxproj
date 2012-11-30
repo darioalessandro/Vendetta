@@ -11,6 +11,7 @@
 		06298C9016685D090085CE66 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06298C8E16685CFF0085CE66 /* libxml2.dylib */; };
 		06298C9216685F830085CE66 /* presidencia.html in Resources */ = {isa = PBXBuildFile; fileRef = 06298C9116685F830085CE66 /* presidencia.html */; };
 		06298C95166870470085CE66 /* VTResourceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 06298C94166870470085CE66 /* VTResourceParser.m */; };
+		06298C96166877930085CE66 /* presidencia.html in Resources */ = {isa = PBXBuildFile; fileRef = 06298C9116685F830085CE66 /* presidencia.html */; };
 		062E8E8D166844C000C202A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E8E8C166844C000C202A7 /* UIKit.framework */; };
 		062E8E8F166844C000C202A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E8E8E166844C000C202A7 /* Foundation.framework */; };
 		062E8E91166844C000C202A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E8E90166844C000C202A7 /* CoreGraphics.framework */; };
@@ -21,8 +22,6 @@
 		062E8EA1166844C100C202A7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 062E8EA0166844C100C202A7 /* Default@2x.png */; };
 		062E8EA3166844C100C202A7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 062E8EA2166844C100C202A7 /* Default-568h@2x.png */; };
 		062E8EA6166844C100C202A7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 062E8EA5166844C100C202A7 /* ViewController.m */; };
-		062E8EA9166844C100C202A7 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062E8EA7166844C100C202A7 /* ViewController_iPhone.xib */; };
-		062E8EAC166844C100C202A7 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062E8EAA166844C100C202A7 /* ViewController_iPad.xib */; };
 		062E8EB4166844C100C202A7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E8EB3166844C100C202A7 /* SenTestingKit.framework */; };
 		062E8EB5166844C100C202A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E8E8C166844C000C202A7 /* UIKit.framework */; };
 		062E8EB6166844C100C202A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E8E8E166844C000C202A7 /* Foundation.framework */; };
@@ -34,6 +33,9 @@
 		062E8EDC1668538000C202A7 /* VTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 062E8EDB1668538000C202A7 /* VTResource.m */; };
 		062E8EDD1668538000C202A7 /* VTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 062E8EDB1668538000C202A7 /* VTResource.m */; };
 		062E8EE0166855BE00C202A7 /* VTResourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 062E8EDF166855BE00C202A7 /* VTResourceTests.m */; };
+		068E0BE816687ECB00E89A72 /* VTResourceViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 068E0BE616687ECB00E89A72 /* VTResourceViewer.m */; };
+		068E0BE916687ECB00E89A72 /* VTResourceViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068E0BE716687ECB00E89A72 /* VTResourceViewer.xib */; };
+		068E0BEB1668807200E89A72 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068E0BEA1668807200E89A72 /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +68,6 @@
 		062E8EA2166844C100C202A7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		062E8EA4166844C100C202A7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		062E8EA5166844C100C202A7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		062E8EA8166844C100C202A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		062E8EAB166844C100C202A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		062E8EB2166844C100C202A7 /* VendettaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VendettaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		062E8EB3166844C100C202A7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		062E8EBB166844C100C202A7 /* VendettaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VendettaTests-Info.plist"; sourceTree = "<group>"; };
@@ -82,6 +82,10 @@
 		062E8EDB1668538000C202A7 /* VTResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTResource.m; sourceTree = "<group>"; };
 		062E8EDE166855BE00C202A7 /* VTResourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTResourceTests.h; sourceTree = "<group>"; };
 		062E8EDF166855BE00C202A7 /* VTResourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTResourceTests.m; sourceTree = "<group>"; };
+		068E0BE516687ECB00E89A72 /* VTResourceViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTResourceViewer.h; sourceTree = "<group>"; };
+		068E0BE616687ECB00E89A72 /* VTResourceViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTResourceViewer.m; sourceTree = "<group>"; };
+		068E0BE716687ECB00E89A72 /* VTResourceViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTResourceViewer.xib; sourceTree = "<group>"; };
+		068E0BEA1668807200E89A72 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,8 +229,10 @@
 			children = (
 				062E8EA4166844C100C202A7 /* ViewController.h */,
 				062E8EA5166844C100C202A7 /* ViewController.m */,
-				062E8EA7166844C100C202A7 /* ViewController_iPhone.xib */,
-				062E8EAA166844C100C202A7 /* ViewController_iPad.xib */,
+				068E0BEA1668807200E89A72 /* ViewController.xib */,
+				068E0BE516687ECB00E89A72 /* VTResourceViewer.h */,
+				068E0BE616687ECB00E89A72 /* VTResourceViewer.m */,
+				068E0BE716687ECB00E89A72 /* VTResourceViewer.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -306,8 +312,9 @@
 				062E8E9F166844C100C202A7 /* Default.png in Resources */,
 				062E8EA1166844C100C202A7 /* Default@2x.png in Resources */,
 				062E8EA3166844C100C202A7 /* Default-568h@2x.png in Resources */,
-				062E8EA9166844C100C202A7 /* ViewController_iPhone.xib in Resources */,
-				062E8EAC166844C100C202A7 /* ViewController_iPad.xib in Resources */,
+				06298C96166877930085CE66 /* presidencia.html in Resources */,
+				068E0BE916687ECB00E89A72 /* VTResourceViewer.xib in Resources */,
+				068E0BEB1668807200E89A72 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +357,7 @@
 				062E8ED3166852F800C202A7 /* XPathQuery.m in Sources */,
 				062E8EDC1668538000C202A7 /* VTResource.m in Sources */,
 				06298C95166870470085CE66 /* VTResourceParser.m in Sources */,
+				068E0BE816687ECB00E89A72 /* VTResourceViewer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,22 +389,6 @@
 				062E8E96166844C000C202A7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		062E8EA7166844C100C202A7 /* ViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				062E8EA8166844C100C202A7 /* en */,
-			);
-			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		062E8EAA166844C100C202A7 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				062E8EAB166844C100C202A7 /* en */,
-			);
-			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		062E8EBC166844C100C202A7 /* InfoPlist.strings */ = {

@@ -14,11 +14,11 @@
 
 @implementation VTLoader
 
-+(VTLoader *)loaderWithURL:(NSURL *)url{
++(VTLoader *)loaderWithRequest:(NSURLRequest *)request{
     VTLoader * loader;
-    if(url!=nil){
+    if(request!=nil){
         loader=[[VTLoader alloc] _init];
-        [loader setValue:url forKey:@"url"];
+        [loader setValue:request forKey:@"request"];
         loader.operationQueue=[NSOperationQueue new]; //TODO: refactor to a global backgrounding queue.
     }
     return loader;
@@ -26,12 +26,11 @@
 
 
 -(void)loadURLContentsWithHandler:(VTLoaderOnLoadURLHandler)handler{
-    NSURLRequest * URLRequest=[self URLRequest];
     if(!handler){
-        [NSException raise:@"API Policy exception" format:@"Attempted to load url %@ from %@ with nil handler.", self, self.url];
+        [NSException raise:@"API Policy exception" format:@"Attempted to load url %@ from %@ with nil handler.", self, self.request];
     }
     self.onLoadHandler=handler;
-    [NSURLConnection sendAsynchronousRequest:URLRequest queue:[self operationQueue] completionHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
+    [NSURLConnection sendAsynchronousRequest:self.request queue:[self operationQueue] completionHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
         VTResource * resource=[VTResource resourceWithData:data error:&error];
         self.onLoadHandler(resource, error);
         self.status=VTLoaderStatusDone;
@@ -41,13 +40,6 @@
 
 #pragma mark -
 #pragma mark Private API
-
--( NSURLRequest *)URLRequest{
-    if(!self.url){
-        [NSException raise:@"API Policy exception" format:@"Attempted to load nil url from %@.", self];
-    }
-    return [NSURLRequest requestWithURL:self.url];
-}
 
 -(id)init{
     NSException * e=[NSException exceptionWithName:@"API Policy exception" reason:@"You should call loaderWithURL in order to instantiate this." userInfo:nil];

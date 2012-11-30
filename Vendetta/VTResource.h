@@ -13,5 +13,5 @@
 
 @property(nonatomic, strong) NSData * data;
 +(VTResource *)resourceWithData:(NSData *)data error:(NSError **)error;
--(NSArray *)allURL;
+-(NSArray *)allURLs;
 @end

@@ -28,13 +28,13 @@ static NSString * const kPresidenciaDeMexico= @"http://www.presidencia.gob.mx/";
 
 - (void)testShouldGetANilPointerWhenTryingToInitializeWithNilURL
 {
-    VTLoader * loader=[VTLoader loaderWithURL:nil];
+    VTLoader * loader=[VTLoader loaderWithRequest:nil];
     STAssertEqualObjects(loader, nil, @"Got a valid instance %@ instead of a nil pointer", loader);
 }
 
 -(void)testShouldGetAValidInstanceForPresidenciaDeMexico{
     NSURL * url= [NSURL URLWithString:kPresidenciaDeMexico];
-    VTLoader * loader=[VTLoader loaderWithURL:url];
+    VTLoader * loader=[VTLoader loaderWithRequest:[NSURLRequest requestWithURL:url]];
     STAssertTrue(loader!=nil, @"got an invalid instance %@ even when the url %@ is valid.", loader, url);
 }
 
@@ -45,11 +45,10 @@ static NSString * const kPresidenciaDeMexico= @"http://www.presidencia.gob.mx/";
 
 -(void)testShouldGetAnNSDataObjectAfterLoadingPresidenciaDeMexico{
     NSURL * url= [[self bundle] URLForResource:@"presidencia.html" withExtension:nil];
-    VTLoader * loader=[VTLoader loaderWithURL:url];
+    VTLoader * loader=[VTLoader loaderWithRequest:[NSURLRequest requestWithURL:url]];
     [loader loadURLContentsWithHandler:^(VTResource * resource, NSError *error) {
         STAssertTrue(resource!=nil, @"Unable to get resource %@", resource);
         STAssertEqualObjects(error, nil, @"Got an unexpected error %@", error);
-        NSLog(@"nodes %@", [resource allURL]);
     }];
     while ([loader status]!=VTLoaderStatusDone) {
         [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeInterval:1 sinceDate:[NSDate date]]];

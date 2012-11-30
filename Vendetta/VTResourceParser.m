@@ -7,7 +7,20 @@
 //
 
 #import "VTResourceParser.h"
+#import "XPathQuery.h"
 
 @implementation VTResourceParser
+
+-(NSArray *)URLsFromData:(NSData *)data{
+    NSString * xPathQuery= @"//*[@src]/@src | //*[@href]/@href";
+    NSArray * nodes= PerformHTMLXPathQuery(data, xPathQuery);
+    NSMutableArray * array=[NSMutableArray array];
+    [nodes enumerateObjectsUsingBlock:^(NSDictionary * obj, NSUInteger idx, BOOL *stop) {
+        NSURL * url=[NSURL URLWithString:[obj objectForKey:@"nodeContent"]];
+        if([[url scheme] isEqualToString:@"http"])
+            [array addObject:url];
+    }];
+    return array;
+}
 
 @end

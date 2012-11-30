@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VTResource.h"
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UITableViewController <UISearchBarDelegate>
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property(nonatomic, strong) VTResource * resource;
+@property (strong, nonatomic) IBOutlet UITableViewCell *searchBarCell;
 @end

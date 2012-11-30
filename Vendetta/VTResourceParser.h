@@ -10,4 +10,6 @@
 
 @interface VTResourceParser : NSObject
 
+-(NSArray *)URLsFromData:(NSData *)data;
+
 @end
