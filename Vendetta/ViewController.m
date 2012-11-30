@@ -51,6 +51,7 @@
     UITableViewCell * cell= [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if(!cell){
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+        [[cell textLabel] setAdjustsFontSizeToFitWidth:TRUE];
     }
 //    [NSURLRequest requestWithURL:[self.resource allURLs][indexPath.row]]
     NSString * string= [[self.resource allURLs][indexPath.row] absoluteString];
