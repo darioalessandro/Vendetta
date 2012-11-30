@@ -19,15 +19,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    NSURLRequest * req=[NSURLRequest requestWithURL:[[NSBundle mainBundle] URLForResource:@"presidencia.html" withExtension:nil]];
-    VTLoader * loader= [VTLoader loaderWithRequest:req];
-    [loader loadURLContentsWithHandler:^(VTResource *resource, NSError *error) {
-        self.resource=resource;
-       dispatch_async(dispatch_get_main_queue(), ^{
-           [self.tableView reloadData];
-       });
-    }];
+    if(!self.request){
+        self.request=[NSURLRequest requestWithURL:[[NSBundle mainBundle] URLForResource:@"presidencia.html" withExtension:nil]];
+    }
+        VTLoader * loader= [VTLoader loaderWithRequest:self.request];
+        [loader loadURLContentsWithHandler:^(VTResource *resource, NSError *error) {
+            self.resource=resource;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadData];
+                });
+        }];
+    self.title=self.request.URL.absoluteString;
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +54,7 @@
     if(!cell){
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
         [[cell textLabel] setAdjustsFontSizeToFitWidth:TRUE];
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
     }
 //    [NSURLRequest requestWithURL:[self.resource allURLs][indexPath.row]]
     NSString * string= [[self.resource allURLs][indexPath.row] absoluteString];
@@ -61,6 +64,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    ViewController * viewController= [ViewController new];
+    [viewController setRequest:[NSURLRequest requestWithURL:[self.resource allURLs][indexPath.row]]];
+    [self.navigationController pushViewController:viewController animated:TRUE];
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     VTResourceViewer * viewer= [VTResourceViewer new];
     [viewer setResource:[self.resource allURLs][indexPath.row]];
     [self.navigationController pushViewController:viewer animated:YES];

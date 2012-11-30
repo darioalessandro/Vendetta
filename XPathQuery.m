@@ -138,7 +138,7 @@ NSArray *PerformXPathQuery(xmlDocPtr doc, NSString *query)
 	xmlNodeSetPtr nodes = xpathObj->nodesetval;
 	if (!nodes)
 	{
-		NSLog(@"Nodes was nil.");
+		NSLog(@"Nodes were nil.");
 		return nil;
 	}
 	

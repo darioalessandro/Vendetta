@@ -13,4 +13,5 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property(nonatomic, strong) VTResource * resource;
 @property (strong, nonatomic) IBOutlet UITableViewCell *searchBarCell;
+@property(nonatomic, strong) NSURLRequest * request;
 @end
