@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VTResourceParser : NSObject
-
+@interface VTResourceParser : NSObject 
 -(NSArray *)URLsFromData:(NSData *)data;
 
 @end
